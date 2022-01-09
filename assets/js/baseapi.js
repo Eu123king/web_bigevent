@@ -1,6 +1,6 @@
 // 每次调用请求前,都会先调用这个函数
 $.ajaxPrefilter(function(option) {
-    option.url = 'http://api-breakingnews-web.itheima.net' + option.url;
+    option.url = 'http://www.liulongbin.top:3007' + option.url;
     // 统一为有权限的接口设置请求头
     if (option.url.indexOf('/my/') !== -1) {
         option.headers = {
@@ -13,6 +13,5 @@ $.ajaxPrefilter(function(option) {
             localStorage.removeItem('token');
             location.href = '/login.html';
         }
-        console.log(option.url);
     }
 })
